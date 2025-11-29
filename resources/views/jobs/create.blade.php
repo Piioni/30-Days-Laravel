@@ -24,8 +24,14 @@
                                     id="title"
                                     class="block flex-1 border-0 bg-transparent px-3 py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                     placeholder="Shift Leader"
+                                    required
                                 />
                             </div>
+                        </div>
+                        <div class="mt-2">
+                            @error('title')
+                                <p class="text-xs font-semibold text-red-400 italic">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
 
@@ -42,17 +48,32 @@
                                     id="salary"
                                     class="block flex-1 border-0 bg-transparent px-3 py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                     placeholder="$50,000 Per Year"
+                                    required
                                 />
                             </div>
                         </div>
+                        <div class="mt-2">
+                            @error('salary')
+                                <p class="text-xs font-semibold italic accent-red-500">{{ $message }}</p>
+                            @enderror
+                        </div>
                     </div>
                 </div>
+
+                {{-- <div class="mt-10"> --}}
+                {{-- @if ($errors->any()) --}}
+                {{-- <ul> --}}
+                {{-- @foreach ($errors->all() as $error) --}}
+                {{-- <li class="text-red-500 italic">{{ $error }}</li> --}}
+                {{-- @endforeach --}}
+                {{-- </ul> --}}
+                {{-- @endif --}}
+                {{-- </div> --}}
             </div>
         </div>
 
         <div class="mt-6 flex items-center justify-end gap-x-6">
             <button type="button" class="text-sm leading-6 font-semibold text-gray-900">Cancel</button>
-
 
             <button
                 type="submit"
